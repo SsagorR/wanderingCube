@@ -1,0 +1,10 @@
+* {
+	box-sizing: border-box;
+}
+
+.cube {
+	height: 4em;
+	width: 4em;
+	background-color: cornflowerblue;
+	border-radius: 5px;
+}
