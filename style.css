@@ -1,10 +1,36 @@
 * {
+	font-family: Verdana, sans-serif;
 	box-sizing: border-box;
 }
 
 .cube {
+	position: relative;
 	height: 4em;
 	width: 4em;
 	background-color: cornflowerblue;
 	border-radius: 5px;
+	margin-left: 30%;
+	margin-top: -5em;
+	z-index: 0;
+}
+
+.startingAlert {
+	position: relative;
+	display: block;
+	z-index: 1;
+	margin-left: 25%;
+	width: 50%;
+	text-align: center;
+	border: 2px solid black;
+	border-radius: 10px;
+	background-color: lightgrey;
+	height: 10em;
+	margin-top: 4em;
+	font-size: 1.5em;
+}
+
+.cross {
+	float: right;
+	margin-right: 5px;
+	cursor: pointer;
 }

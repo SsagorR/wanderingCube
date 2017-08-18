@@ -5,23 +5,34 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-	<div class="cube" id="cube" onmouseover="randomPosition(cube)"></div>
+	<div class="startingAlert" id="alert">
+		<span class="catch">Catch this f#%@ing cube!</span>
+		<span class="cross" id="cross" onclick="closeWindow()">
+    		&#10006;
+  		</span>
+  	</div>
+	<div class="cube" id="cube" onmouseover="randomPosition(cube)" onclick="alert('gotcha!')"></div>
 	<script type="text/javascript">
 	var cube = document.getElementById('cube');
 	function randomPosition(elem) {
-		// var oneOrZero =  Math.floor(Math.random()*(1 - 0 + 1) + 0);
-		// if (oneOrZero === 0) {
-
+			
+		
+		if(event.shiftKey) {
+			return;
+		} else {
 			elem.style.marginTop = Math.floor(Math.random()*(document.documentElement.clientHeight - cube.clientHeight - 1 + 1) + 1).toString() + 'px';
 			elem.style.marginLeft = Math.floor(Math.random()*(document.documentElement.clientWidth - cube.clientWidth - 1 + 1) + 1).toString() + 'px';
+		}
 
-		// } else if (oneOrZero === 1) {
-		// 	elem.style.marginBottom = Math.floor(Math.random()*(40 - 1 + 1) + 1).toString() + 'em';
-		// 	elem.style.marginRight = Math.floor(Math.random()*(40 - 1 + 1) + 1).toString() + 'em';
-		// 	elem.style.marginTop = '0';
-		// 	elem.style.marginLeft = '0';
-		// }
 	}
+
+	function closeWindow() {
+		document.getElementById('alert').style.display = 'none';
+		document.getElementById('cube').style.marginTop = '4em';
+	}
+
+
+
 	</script>
 </body>
 </html>
